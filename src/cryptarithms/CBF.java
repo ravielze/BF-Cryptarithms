@@ -1,10 +1,16 @@
 package cryptarithms;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Logger;
 
 import cryptarithms.logger.LogFormatter;
+import cryptarithms.problem.NewSolver;
+import cryptarithms.utils.PUtils;
+import cryptarithms.utils.ShowUtils;
 
 public class CBF {
 
@@ -33,7 +39,53 @@ public class CBF {
     }
 
     public void run(){
-        getLogger().info("test");
+        getLogger().info("Generating all permutations, Please wait... (Approx. 10s)");
+        PUtils.permutations.get(0);
+        Scanner scn = new Scanner(System.in);
+        ArrayList<Character> ch = new ArrayList<>();
+        List<Integer> temp = new ArrayList<>();
+        List<List<Integer>> sol = new ArrayList<>();
+        while (true){
+            getLogger().info("Silakan masukkan nama file cryptarithms (ketik exit untuk keluar): ");
+            String fileName = scn.next();
+            if (fileName.equalsIgnoreCase("exit")){
+                getLogger().info("Berhasil keluar dari sistem.");
+                break;
+            }
+            NewSolver ns = new NewSolver(fileName);
+            ns.parse();
+            if (ns.isError()){
+                getLogger().severe("Terjadi kesalahan saat membaca file!");
+            } else {
+                while (true){
+                    getLogger().info("Mau berapa banyak solusi?");
+                    getLogger().info("1. Satu saja");
+                    getLogger().info("2. Semua");
+                    getLogger().info("3. Kembali");
+                    try {
+                        int pil = scn.nextInt();
+                        double now = System.currentTimeMillis()/1000D;
+                        if (pil == 2){
+                            ns.findAllSolution(sol, ch);
+                        } else if (pil == 1){
+                            sol.clear();
+                            ns.findSolution(temp, ch);
+                            sol.add(temp);
+                        } else {
+                            break;
+                        }
+                        ShowUtils.showAll(ns.getOperands(), sol, ch);
+                        double dt = (System.currentTimeMillis()/1000D)-now;
+                        getLogger().info(String.format("Waktu yang dibutuhkan: %.2fs", dt));
+                        break;
+                    } catch (Exception ex){
+                        getLogger().severe("Input error.");
+                        break;
+                    }
+                }
+            }
+        }
+        scn.close();
     }
     
 }
