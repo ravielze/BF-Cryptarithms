@@ -46,14 +46,17 @@ public class CBF {
         List<Integer> temp = new ArrayList<>();
         List<List<Integer>> sol = new ArrayList<>();
         while (true){
+            
             getLogger().info("Silakan masukkan nama file cryptarithms (ketik exit untuk keluar): ");
             String fileName = scn.next();
             if (fileName.equalsIgnoreCase("exit")){
                 getLogger().info("Berhasil keluar dari sistem.");
                 break;
             }
+
             NewSolver ns = new NewSolver(fileName);
             ns.parse();
+
             if (ns.isError()){
                 getLogger().severe("Terjadi kesalahan saat membaca file!");
                 continue;
@@ -94,12 +97,9 @@ public class CBF {
 
     public void promptEnterKey(){
         System.out.println("Press \"ENTER\" to continue...");
-        try
-        {
+        try {
             System.in.read();
-        }  
-        catch(Exception e)
-        {}  
-     }
+        }  catch(Exception e) { }  
+    }
     
 }

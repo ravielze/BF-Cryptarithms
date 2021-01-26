@@ -5,7 +5,7 @@ import java.util.List;
 
 public final class PUtils {
 
-    public static final long TOTAL = 3265920;
+    public static final long TOTAL = 3265920; // Setara dengan 10!
     public static List<Integer> factorial = new ArrayList<>(10);
     public static List<List<Integer>> permutations = new ArrayList<>(3265920);
     static {
