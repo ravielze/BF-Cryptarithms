@@ -56,6 +56,7 @@ public class CBF {
             ns.parse();
             if (ns.isError()){
                 getLogger().severe("Terjadi kesalahan saat membaca file!");
+                continue;
             } else {
                 while (true){
                     getLogger().info("Mau berapa banyak solusi?");

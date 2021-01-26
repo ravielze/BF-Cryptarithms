@@ -68,6 +68,7 @@ public class NewSolver {
                     character.add(x);
 
                 if (character.size() > 10){
+                    this.isError = true;
                     CBF.getInstance().getLogger().warning("Error on loading problem: character is more than 10");
                     return;
                 }
@@ -126,13 +127,15 @@ public class NewSolver {
         if (this.isError) return;
 
         Set<Long> uniqueResult = new HashSet<>();
+        solutions.clear();
         for (int i=0; i < PUtils.TOTAL; i++){
             long s = solve(i);
-            if (s != -1L && uniqueResult.add(s)){
+            if (s != -1L && uniqueResult.add(Long.valueOf(s))){
                 solutions.add(PUtils.permutations.get(i));
                 characters.clear();
                 characters.addAll(this.character);
             }
+            s = -1L;
         }
     }
 
