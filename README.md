@@ -8,6 +8,7 @@ Program Cryptarithmetic mencari solusi dari persoalan *Cryptarithmetic* dengan a
 ![Contoh2](./img/ThreeThreeTwoTwoOneEleven.png)
 ![Contoh3](./img/CoolMathBlogTeach.png)
 ![Contoh4](./img/SunFunSwim.png)
+[Contoh Lainnya Cek Disini](./img)
 
 ## Requirement Program
 - Java (Minimum Java 8)
