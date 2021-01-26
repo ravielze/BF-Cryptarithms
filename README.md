@@ -29,7 +29,7 @@ java cryptarithms.CryptaBF
 6. Tunggu kurang lebih 10 detik untuk program menyiapkan permutasi
 7. Ketika selesai, program akan meminta nama file yang berisikan problema soal (sertakan ekstensi file seperti .txt)
 ### Cara Otomatis (Windows)
-1. Jalankan run.bat langkah 1-6 pada tata cara manual akan dilakukan secara otomatis
+1. Jalankan run.bat dan langkah 1-6 pada tata cara manual akan dilakukan secara otomatis
 2. Tunggu kurang lebih 10 detik untuk program menyiapkan permutasi
 3. Ketika selesai, program akan meminta nama file yang berisikan problema soal (sertakan ekstensi file seperti .txt)
 
