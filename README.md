@@ -14,6 +14,7 @@ Program Cryptarithmetic mencari solusi dari persoalan *Cryptarithmetic* dengan a
 - Java (Minimum Java 8)
 
 ## Cara Menggunakan Program
+### Cara Manual (Windows/Linux/MacOS)
 1. Buka terminal pada folder ini
 2. Masuk ke folder src
 3. Compile dengan menggunakan command
@@ -27,6 +28,10 @@ java cryptarithms.CryptaBF
 ```
 6. Tunggu kurang lebih 10 detik untuk program menyiapkan permutasi
 7. Ketika selesai, program akan meminta nama file yang berisikan problema soal (sertakan ekstensi file seperti .txt)
+### Cara Otomatis (Windows)
+1. Jalankan run.bat langkah 1-6 pada tata cara manual akan dilakukan secara otomatis
+2. Tunggu kurang lebih 10 detik untuk program menyiapkan permutasi
+3. Ketika selesai, program akan meminta nama file yang berisikan problema soal (sertakan ekstensi file seperti .txt)
 
 ## Identitas Pembuat
 Program ini dibuat oleh [Steven Nataniel](https://github.com/ravielze) untuk menuntaskan tugas kecil 1 dari mata kuliah IF2211 Strategi Algoritma
