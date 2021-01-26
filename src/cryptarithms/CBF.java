@@ -40,7 +40,7 @@ public class CBF {
 
     public void run(){
         getLogger().info("Generating all permutations, Please wait... (Approx. 10s)");
-        PUtils.permutations.get(0);
+        PUtils.permutations.get(0); // Trigger static block biar nyala
         Scanner scn = new Scanner(System.in);
         ArrayList<Character> ch = new ArrayList<>();
         List<Integer> temp = new ArrayList<>();
@@ -74,7 +74,9 @@ public class CBF {
                         } else {
                             break;
                         }
-                        ShowUtils.showAll(ns.getOperands(), sol, ch);
+                        ShowUtils.showProblem(ns.getOperands(), ns.getBar());
+                        getLogger().info("");
+                        ShowUtils.showAll(ns.getOperands(), sol, ch, ns.getBar());
                         double dt = (System.currentTimeMillis()/1000D)-now;
                         getLogger().info(String.format("Waktu yang dibutuhkan: %.2fs", dt));
                         break;
@@ -83,9 +85,20 @@ public class CBF {
                         break;
                     }
                 }
+                promptEnterKey();
             }
         }
         scn.close();
     }
+
+    public void promptEnterKey(){
+        System.out.println("Press \"ENTER\" to continue...");
+        try
+        {
+            System.in.read();
+        }  
+        catch(Exception e)
+        {}  
+     }
     
 }

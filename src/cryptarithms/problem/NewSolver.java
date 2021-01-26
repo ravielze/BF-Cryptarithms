@@ -104,9 +104,6 @@ public class NewSolver {
             int idx = character.indexOf(first);
             if (list.get(idx) == 0) return -1L;
         }
-        if (left == right){
-            System.out.println(left + " " + right);
-        }
         return (left == right) ? right : -1L;
     }
 
@@ -120,6 +117,7 @@ public class NewSolver {
                 solution.addAll(PUtils.permutations.get(i));
                 characters.clear();
                 characters.addAll(this.character);
+                CBF.getInstance().getLogger().info(String.format("Ditemukan setelah: %d iterasi", (i+1)));
                 break;
             }
         }
@@ -140,5 +138,13 @@ public class NewSolver {
 
     public List<String> getOperands(){
         return this.realOperands;
+    }
+
+    public String getBar(){
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i < this.maxstrip; i++){
+            sb.append("-");
+        }
+        return sb.toString();
     }
 }
